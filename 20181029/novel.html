@@ -35,5 +35,30 @@
 				今日は肉の日です。焼肉を食べます。
 			</div>
 		</div>
+	
+	<script>	
+		scenario = [
+			  {action:"MSG", value:"今日は給料日です"}
+			, {action:"MSG", value:"焼肉が食べたいので海にバーベキューに行きましょう"}
+			, {action:"BG", value:"url(/asset/background/beach_001.jpg)"}
+		];
+		cursor = 0;
+
+		gamewindow = document.querySelector("#game-window");
+		msg = document.querySelector("#message-window");
+		msg.addEventListener("click", function(){
+			buff = scenario[cursor];
+
+			switch(buff["action"]){
+				case "MSG":
+					msg.innerHTML = buff["value"];
+					break;
+				case "BG":
+					gamewindow.style.backgroundImage = buff["value"];
+					break;
+			}
+			cursor++;
+		});
+	</script>
 	</body>
 </html>
