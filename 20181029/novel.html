@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ノベルゲーム</title>
+		<style>
+			#game-window{
+				width: 800px;
+				height: 600px;
+				background-image: url(/asset/background/fantasy_001.jpg);
+			}
+			#message-window{
+				position: absolute;
+				top: 400px;
+				left: 100px;
+
+				width: 600px;
+				height: 150px;
+				border: 1px solid gray;
+				background-color: rgba(256,256,256,0.5);
+				font-size: 16pt;
+				padding: 4px;
+			}
+			#chara1{
+				width: 280px;
+				position: absolute;
+				top: 100px;
+				left: 60px;				
+			}
+		</style>
+	</head>
+	<body>
+		<div id="game-window">
+			<img id="chara1" src="/asset/chara/f054.png">
+			<div id="message-window">
+				今日は肉の日です。焼肉を食べます。
+			</div>
+		</div>
+	</body>
+</html>
