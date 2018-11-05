@@ -2,6 +2,21 @@
 <html>
 <head>
 	<title>チャット</title>
+	<style>
+		h1{
+			font-size:12pt;
+			border-bottom: 1px solid gray;
+		}
+		form{
+			border: 1px solid gray;
+			padding: 10px;
+			margin-bottom: 15px;
+		}
+		.timestamp{
+			color: lightgray;
+			font-size: 8pt;
+		}
+	</style>
 </head>
 <body>
 
@@ -14,8 +29,10 @@
 <?php
 $fp = fopen("data.txt", "r");
 while( ($buff=fgets($fp)) != false ){
-	echo $buff;
-	echo "<br>";
+	$line = explode("\t", $buff);
+	echo $line[0];
+	echo " <span class=\"timestamp\">".date("Y-m-d H:i:s", $line[1])."</span>";
+	echo "<br>\n";
 }
 fclose($fp);
 ?>
